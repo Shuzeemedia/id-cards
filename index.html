@@ -474,7 +474,7 @@
 </head>
 
 <body>
-    <button onclick="prev()" id="click">Preveous</button>
+    <button onclick="prev()" id="click">Previous</button>
     <div id="wrap">
         <div id="logo">
 
@@ -584,6 +584,14 @@
     // img.src = im_db[0]
     pimg.style.backgroundImage = main[0].prof
 
+    function display() {
+        pimg.style.backgroundImage = main[i].prof
+        // img.src = im_db[i]
+        user.innerHTML = main[i].Fname + " " + main[i].Mname + " " + main[i].Lname
+        crse.innerHTML = main[i].course
+        num.innerHTML = main[i].number
+    }
+
     function next() {
         if (i === main.length - 1) {
             i = 0
@@ -591,11 +599,7 @@
         else {
             i++
         }
-        pimg.style.backgroundImage = main[i].prof
-        // img.src = im_db[i]
-        user.innerHTML = main[i].Fname + " " + main[i].Mname + " " + main[i].Lname
-        crse.innerHTML = main[i].course
-        num.innerHTML = main[i].number
+        display()
     }
 
     function prev() {
@@ -605,11 +609,7 @@
         else {
             i--
         }
-        pimg.style.backgroundImage = main[i].prof
-        // img.src = im_db[i]
-        user.innerHTML = main[i].Fname + " " + main[i].Mname + " " + main[i].Lname
-        crse.innerHTML = main[i].course
-        num.innerHTML = main[i].number
+        display()
     }
 
 </script>
